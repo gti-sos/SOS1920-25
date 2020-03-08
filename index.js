@@ -2,7 +2,7 @@ const express = require("express");
 
 var app = express();
 
-var port = proccess.env.PORT || 80;
+var port = process.env.PORT || 80;
 
 app.use("/",express.static("./public"));
 
