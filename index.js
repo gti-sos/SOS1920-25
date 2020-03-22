@@ -47,14 +47,14 @@ const BASE_API_URL = "/api/v1";
 
 // GET COUNTRIES
 
-app.get(BASE_API_URL+"/countriesforhappiness", (req,res) =>{
+app.get(BASE_API_URL+"/happiness_rate", (req,res) =>{
 	res.send(JSON.stringify(countries,null,2));
 });
 
 
 // POST COUNTRIES
 
-app.post(BASE_API_URL+"/countriesforhappiness",(req,res) =>{
+app.post(BASE_API_URL+"/happiness_rate",(req,res) =>{
 	
 	var NewCountry = req.body;
 	
@@ -68,7 +68,7 @@ app.post(BASE_API_URL+"/countriesforhappiness",(req,res) =>{
 });
 
 // DELETE COUNTRIES
-app.delete(BASE_API_URL+"/countriesforhappiness", (req,res) =>{
+app.delete(BASE_API_URL+"/happiness_rate", (req,res) =>{
 	 
 	var emptyContries =[];
 	
@@ -80,16 +80,16 @@ app.delete(BASE_API_URL+"/countriesforhappiness", (req,res) =>{
 	}	
 });
 //PUT COUNTRIES
-app.put(BASE_API_URL+"/countriesforhappiness", (req,res)=>{
+app.put(BASE_API_URL+"/happiness_rate", (req,res)=>{
 	res.sendStatus(405,"METHOD NOT ALLOWED");
 });
 
 //POST COUNTRIES/XXX
-app.post(BASE_API_URL+"/countriesforhappiness/:country",(req,res) =>{
+app.post(BASE_API_URL+"/happiness_rate/:country",(req,res) =>{
 	res.sendStatus(405,"METHOD NOT ALLOWED");
 });
 // GET COUNTRIES/XXX
-app.get(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
+app.get(BASE_API_URL+"/happiness_rate/:country",(req,res)=>{
 	
 	var  country = req.params.country;
 	
@@ -105,7 +105,7 @@ app.get(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
 
 });
 // PUT COUNTRY/XXX
-app.put(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
+app.put(BASE_API_URL+"/happiness_rate/:country",(req,res)=>{
 	var  country = req.params.country;
 	var UpdatedCountry = req.body;
 	var found = false;
@@ -129,7 +129,7 @@ app.put(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
 	
 });
 // DELETE COUNTRY/XXX
-app.delete(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
+app.delete(BASE_API_URL+"/happiness_rate/:country",(req,res)=>{
 	
 	var  country = req.params.country;
 	
@@ -146,7 +146,7 @@ app.delete(BASE_API_URL+"/countriesforhappiness/:country",(req,res)=>{
 
 });
 
-//base de datos
+//base de datos ale
 var countries_for_equality_stats = [
 	{ 
 		country: "spain" ,
