@@ -51,6 +51,10 @@ app.get(BASE_API_URL+"/happiness_rate/loadInitialData", (req,res) =>{
 	res.send(JSON.stringify(countries,null,2));
 });
 
+app.get(BASE_API_URL+"/happiness_rate", (req,res) =>{
+    res.send(JSON.stringify(countries,null,2));
+    console.log("DATA SEND: " + JSON.stringify(countries))
+});
 
 // POST COUNTRIES
 
