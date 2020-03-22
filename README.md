@@ -1,2 +1,9 @@
 # SOS1920-25
-Grupo 25 de SOS
+
+Este es nuestro repositorio
+
+## Integrantes
+El grupo esta compuesto por:
+   - Alejandro Mena Claro
+   - Adriรกn Escudero Barra
+   - Juan Manuel Arcos Gonzรกlez
