@@ -513,12 +513,12 @@ app.delete(BASE_API_URL+"/global_competitiveness_index/:country",(req,res)=>{
     
     var  country = req.params.country;
     
-    var filteredCountries = countries.filter((c)=>{
+    var filteredCountries = countries_adrescbar.filter((c)=>{
         return(c.country != country);
     });
     
-    if(filteredCountries.length < countries.length){
-        countries = filteredCountries;
+    if(filteredCountries.length < countries_adrescbar.length){
+        countries_adrescbar = filteredCountries;
         res.sendStatus(200,"OK");
     }else{
         res.sendStatus(404,"NOT FOUND")
