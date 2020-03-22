@@ -1,4 +1,4 @@
-const express = require("express");
+cdconst express = require("express");
 const bodyParser = require("body-parser");
 
 var app = express();
@@ -47,7 +47,7 @@ const BASE_API_URL = "/api/v1";
 
 // GET COUNTRIES
 
-app.get(BASE_API_URL+"/happiness_rate", (req,res) =>{
+app.get(BASE_API_URL+"/happiness_rate/loadInitialData", (req,res) =>{
 	res.send(JSON.stringify(countries,null,2));
 });
 
