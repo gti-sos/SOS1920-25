@@ -7,6 +7,8 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 80;
 
+app.use("/",express.static("./public"));
+
 var countries = [
 	{ 
 		country: "spain",
