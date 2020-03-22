@@ -377,7 +377,7 @@ var: 1,
 },
 { 
 country: "germany",
-phone: 2019,
+year: 2019,
 ranking: 7,
 index: 81.80,
 var: -1.26, 
