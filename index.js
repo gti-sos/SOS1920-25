@@ -41,6 +41,37 @@ var countries = [
 	
 ];
 
+var countries2 = [
+	{ 
+		country: "spain",
+		year:     2019,
+		happinesRanking: 30,
+		happinessRate: 6.365,
+		var: 0.7
+	},
+	{ 
+		country: "germany",
+		year:     2019,
+		happinesRanking: 17,
+		happinessRate: 6.985,
+		var: 0.29	
+	},
+	{
+		country: "france",
+		year:     2019,
+		happinesRanking: 17,
+		happinessRate: 6.592,
+		var: 1.59
+	},
+	{
+		country: "portugal",
+		year:     2019,
+		happinesRanking: 66,
+		happinessRate: 5.693,
+		var: 5.23
+	}
+	
+];
 
 
 const BASE_API_URL = "/api/v1";
@@ -48,7 +79,7 @@ const BASE_API_URL = "/api/v1";
 // GET COUNTRIES
 
 app.get(BASE_API_URL+"/happiness_rate/loadInitialData", (req,res) =>{
-	res.send(JSON.stringify(countries,null,2));
+	res.send(JSON.stringify(countries2,null,2));
 });
 
 app.get(BASE_API_URL+"/happiness_rate", (req,res) =>{
@@ -436,8 +467,74 @@ index: 70.85,
 var: -0.46,
 }
 ];
+
+var countries_adrescbar2 = [
+    { 
+country: "spain",
+year: 2019,
+ranking: 23,
+index: 75.28,
+var: 1,
+},
+{ 
+country: "germany",
+year: 2019,
+ranking: 7,
+index: 81.80,
+var: -1.26, 
+},
+{ 
+country: "united_kingdom",
+year: 2019,
+ranking: 9,
+index: 81.2,
+var: -0.96,
+},
+{ 
+country: "italy",
+year: 2019,
+ranking: 30,
+index: 71.53,
+var: 1.07,
+},
+{ 
+country: "croatia",
+year: 2019,
+ranking: 63,
+index: 61.4,
+var: 3.03,
+},
+{ 
+country: "france",
+year: 2019,
+ranking: 15,
+index: 78.71,
+var: 1.02,
+},
+{ 
+country: "portugal",
+year: 2019,
+ranking: 34,
+index: 70.45,
+var: 0.35,
+},
+{ 
+country: "austria",
+year: 2019,
+ranking: 21,
+index: 76.61,
+var: 0.36,
+},
+{ 
+country: "czech_republic",
+year: 2019,
+ranking: 32,
+index: 70.85,
+var: -0.46,
+}
+];
 app.get(BASE_API_URL+"/global_competitiveness_index/loadInitialData", (req,res) =>{
-    res.send(JSON.stringify(countries_adrescbar,null,2));
+    res.send(JSON.stringify(countries_adrescbar2,null,2));
 });
 // GET COUNTRIES
 app.get(BASE_API_URL+"/global_competitiveness_index", (req,res) =>{
