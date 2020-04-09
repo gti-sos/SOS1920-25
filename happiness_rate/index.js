@@ -200,8 +200,7 @@ app.put(BASE_API_URL+"/happiness_rate/:country",(req,res)=>{
 		db.find({"country":country},(error,countries)=>{
 			console.log(countries);
 			if(countries.length == 0){
-				console.log("Error 404, recurso no encontrado.");
-				res.sendStatus(404);
+				res.sendStatus(404,"NOT FOUND");
 			}else if(!updateC.country || !updateC.year || !updateC.happinessRanking || !updateC.happinessRate
 		  			 || !updateC.var || updateC.country != country || Object.keys(updateC).length != 5){
 					res.sendStatus(400,"BAD REQUEST");
