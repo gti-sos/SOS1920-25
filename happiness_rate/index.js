@@ -47,35 +47,93 @@ var initialcountries = [
 // GET COUNTRIES
 
 app.get(BASE_API_URL+"/happiness_rate/loadInitialData", (req,res) =>{
+	var fichero = db.getAllData();
+	if(fichero.length>=1){
+		res.sendStatus(409, "ALREADY EXIST");
+		console.log("There is already loaded data");
+	}else{	
 	db.insert(initialcountries);
+	res.sendStatus(200,"OK");
 	res.send(JSON.stringify(initialcountries,null,2));
+	}
 });
 
 app.get(BASE_API_URL+"/happiness_rate", (req,res) =>{
-	var query = {};
-    let offset = 0;
-	let limit = Number.MAX_SAFE_INTEGER;
 	
-    if (req.query.offset) {
-    	offset = parseInt(req.query.offset);
-        delete req.query.offset;
-        }
-    if (req.query.limit) {
-        limit = parseInt(req.query.limit);
-        delete req.query.limit;
-        }
-	
-	console.log("New GET .../countries");
-	db.find({}).sort({country:1,year:-1}).skip(offset).limit(limit).exec((error,countries) =>{
+	    var limit = req.query.limit;
+		var offset = req.query.offset;
+		console.log("limit="+limit+", offset="+offset);
 		
-			countries.forEach((c) =>{
-				delete c._id;
-			})
-			res.send(JSON.stringify(countries,null,2));
-    		console.log("Countries: " + JSON.stringify(countries));
+		var country = req.query.country;
+		var year = parseInt(req.query.year);
+	    var happinessRanking = parseInt(req.query.happinessRanking);
+		var happinessRate = parseFloat(req.query.happinessRate);
+		
+		var var1 = parseFloat(req.query.var);
+		
+		var fromYear = parseInt(req.query.fromYear);
+		var toYear = parseInt(req.query.toYear);
+		console.log("country="+country+", year="+year+", happinessRate="+happinessRate+", bus="+ happinessRanking+", var="+var1+", fromYear="+fromYear+", toYear="+toYear);
+		
+		if(country){
+			
+			db.find({country: country}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
 			});
-    
-});
+		}else if(year){
+			db.find({year: year}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}else if(happinessRanking){
+			db.find({happinessRanking: happinessRanking}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}else if(happinessRate){
+			db.find({happinessRate: happinessRate}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}else if(var1){
+			db.find({var: var1}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}else if(fromYear && toYear){
+			db.find({year: {$gte: fromYear, $lt: toYear}}).sort({year: 1}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}else{
+			db.find({}).skip(offset).limit(limit).exec( function (err, countries) {
+				countries.forEach( (v) => {
+					delete v._id;
+				});
+				res.send(JSON.stringify(countries,null,2));
+				console.log("Data sent:"+JSON.stringify(countries,null,2));
+			});
+		}
+	});
 
 // POST COUNTRIES
 
@@ -126,26 +184,21 @@ app.post(BASE_API_URL+"/happiness_rate/:country",(req,res) =>{
 // GET COUNTRIES/XXX
 
 app.get(BASE_API_URL+"/happiness_rate/:country",(req,res)=>{
-	db.find({}, (err,countries) =>{
-			var country = req.params.country;
-			
-			var filteredCountries = countries.filter((c)=>{
-				return(c.country == country);
-			});
-		
-			countries.forEach((c) =>{
-				delete c._id;
-			})
-		if(filteredCountries.length >= 1){
-			db.find({}, (err,countries) =>{
-			res.send(filteredCountries);
-			});
-		
-		}else{
-		res.sendStatus(404,"NOT FOUND")
-		}
-			});
-});
+	var country = req.params.country;
+
+		db.find({"country" :country},(error,countries)=>{
+			if(countries.length==0){
+				
+				res.sendStatus(404,"NOT FOUND");
+			}else{
+				res.send(countries.map((t)=>{
+					delete t._id;
+					return(t);
+				}));
+				console.log("Recurso mostrado");
+			}
+		})
+	});
 	
 //GET COUNTRIES/XXX/YYY
 	
