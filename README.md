@@ -26,3 +26,6 @@ https://documenter.getpostman.com/view/10811732/Szme3dQL
 JUAN MANUEL ARCOS GONZALEZ:
 
 https://documenter.getpostman.com/view/10811711/Szme3dUe
+
+HOME DE LA API:
+https://sos1920-25.herokuapp.com/#/
