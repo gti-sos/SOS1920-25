@@ -25,7 +25,7 @@
     async function getCountry() {
 
         console.log("Fetching countries...");
-        const res = await fetch("/api/v1/countries_for_equality_stats/" + params.country + "/" + params.year);
+        const res = await fetch("/api/v2/countries_for_equality_stats/" + params.country + "/" + params.year);
 
         if (res.ok) {
             console.log("Ok:");
@@ -47,7 +47,7 @@
 
     async function updatecountries_for_equality_stats() {
 		
-        const res = await fetch("/api/v1/countries_for_equality_stats/" + params.country + "/" + params.year, {
+        const res = await fetch("/api/v2/countries_for_equality_stats/" + params.country + "/" + params.year, {
             method: "PUT",
             body: JSON.stringify({
                 country: params.country,

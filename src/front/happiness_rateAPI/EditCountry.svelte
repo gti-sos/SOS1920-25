@@ -25,7 +25,7 @@
     async function getCountry() {
 
         console.log("Fetching countries...");
-        const res = await fetch("/api/v1/happiness_rate/" + params.country + "/" + params.year);
+        const res = await fetch("/api/v2/happiness_rate/" + params.country + "/" + params.year);
 		
         if (res.ok) {
             console.log("Ok:");
@@ -47,7 +47,7 @@
 
         console.log("Updating countries..." + JSON.stringify(params.countriesCountry));
 		
-        const res = await fetch("/api/v1/happiness_rate/" + params.country + "/" + params.year, {
+        const res = await fetch("/api/v2/happiness_rate/" + params.country + "/" + params.year, {
             method: "PUT",
             body: JSON.stringify({
                 country: params.country,

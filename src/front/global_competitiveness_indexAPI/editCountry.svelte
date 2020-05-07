@@ -24,7 +24,7 @@
 
     async function getCountries_adrescbar() {
 
-        const res = await fetch("/api/v1/global_competitiveness_index/" + params.country + "/" + params.year);
+        const res = await fetch("/api/v2/global_competitiveness_index/" + params.country + "/" + params.year);
 		
         if (res.ok) {
             console.log("Ok:");
@@ -46,7 +46,7 @@
 
         console.log("Updating countries..." + JSON.stringify(params.countriesCountry));
 		
-        const res = await fetch("/api/v1/global_competitiveness_index/" + params.country + "/" + params.year, {
+        const res = await fetch("/api/v2/global_competitiveness_index/" + params.country + "/" + params.year, {
             method: "PUT",
             body: JSON.stringify({
                 country: params.country,

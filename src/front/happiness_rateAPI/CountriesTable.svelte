@@ -41,8 +41,8 @@
     async function getCountry() {
  
         console.log("Fetching countries...");
-        const res = await fetch("/api/v1/happiness_rate?offset="  + recursos * offset + "&limit=" + recursos);
-		const resNext = await fetch("/api/v1/happiness_rate?offset="  + recursos * (offset + 1) + "&limit=" + recursos);
+        const res = await fetch("/api/v2/happiness_rate?offset="  + recursos * offset + "&limit=" + recursos);
+		const resNext = await fetch("/api/v2/happiness_rate?offset="  + recursos * (offset + 1) + "&limit=" + recursos);
  
         if (res.ok  && resNext.ok) {
             console.log("Ok:");
@@ -71,7 +71,7 @@
 	  
         console.log("Inserting new country..." + JSON.stringify(newCountry));
  
-        const res = await fetch("/api/v1/happiness_rate", {
+        const res = await fetch("/api/v2/happiness_rate", {
             method: "POST",
             body: JSON.stringify(newCountry),
             headers: {
@@ -90,7 +90,7 @@
  
     }
     async function deleteCountry(country, year) {
-        const res = await fetch("/api/v1/happiness_rate/" + country +"/" + year, {
+        const res = await fetch("/api/v2/happiness_rate/" + country +"/" + year, {
             method: "DELETE"
         }).then(function (res) {
 			if(res.status == 200){
@@ -103,7 +103,7 @@
     }
 
 	async function deleteAllCountries() {
-        const res = await fetch("/api/v1/happiness_rate/", {
+        const res = await fetch("/api/v2/happiness_rate/", {
             method: "DELETE"
         }).then(function (res) { 
 			if(res.status == 200){
@@ -115,7 +115,7 @@
         });
     }
 	async function loadInitialData() {
-        const res = await fetch("/api/v1/happiness_rate/loadInitialData", {
+        const res = await fetch("/api/v2/happiness_rate/loadInitialData", {
             method: "GET"
         }).then(function (res) {
 			if(res.status == 200){
