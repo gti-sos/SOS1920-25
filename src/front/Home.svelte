@@ -26,7 +26,12 @@
 		<ul>
 			<li><a href = "https://sos1920-25.herokuapp.com/api/v1/happiness_rate" >https://sos1920-25.herokuapp.com/api/v1/happiness_rate</a>(developed by <a href ="https://github.com/juaarcgon">Juan Manuel Arcos Gonzalez</a>)</li>
   			<li><a href = "https://sos1920-25.herokuapp.com/api/v1/global_competitiveness_index" >https://sos1920-25.herokuapp.com/api/v1/global_competitiveness_index</a>(developed by <a href = "https://github.com/adriator77">Adrian Escudero Barra</a>)</li>
-  			<li><a href = "https://sos1920-25.herokuapp.comapi/v1/countries_for_equality_stats" >https://sos1920-25.herokuapp.comapi/v1/countries_for_equality_stats</a>(developed by <a href = "https://github.com/LagForever">Alejandro Mena Claro</a>)</li>
+  			<li><a href = "https://sos1920-25.herokuapp.com/api/v1/countries_for_equality_stats" >https://sos1920-25.herokuapp.comapi/v1/countries_for_equality_stats</a>(developed by <a href = "https://github.com/LagForever">Alejandro Mena Claro</a>)</li>
+		</ul>
+		<ul>
+			<li><a href = "https://sos1920-25.herokuapp.com/#/happiness_rate" >https://sos1920-25.herokuapp.com/#/happiness_rate</a>(developed by <a href ="https://github.com/juaarcgon">Juan Manuel Arcos Gonzalez</a>)</li>
+  			<li><a href = "https://sos1920-25.herokuapp.com/#/global_competitiveness_index" >https://sos1920-25.herokuapp.com/#/global_competitiveness_index</a>(developed by <a href = "https://github.com/adriator77">Adrian Escudero Barra</a>)</li>
+  			<li><a href = "https://sos1920-25.herokuapp.com/#/countries_for_equality_stats" >https://sos1920-25.herokuapp.com/#/countries_for_equality_stats</a>(developed by <a href = "https://github.com/LagForever">Alejandro Mena Claro</a>)</li>
 		</ul>
 		
 	</ul>
