@@ -73,6 +73,9 @@
 
     }
 </script>
+
+<body style="background-color:#082EFF;">
+</body>
 <main>
     <h5>Editando datos de <strong>{params.country}</strong> en el año <strong>{params.year}</strong></h5>
     {#await countries}
