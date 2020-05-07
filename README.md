@@ -17,7 +17,7 @@ v2
 
 ALEJANDRO MENA CLARO:
 
-https://www.getpostman.com/collections/cb6f3b7b504787432103
+https://documenter.getpostman.com/view/10651428/Szme3dQD?version=latest
 
 ADRIAN ESCUDERO BARRA:
 
@@ -25,4 +25,4 @@ https://documenter.getpostman.com/view/10811732/Szme3dQL
 
 JUAN MANUEL ARCOS GONZALEZ:
 
-https://www.getpostman.com/collections/ea140fee4bd54c5250ab
+https://documenter.getpostman.com/view/10811711/Szme3dUe
