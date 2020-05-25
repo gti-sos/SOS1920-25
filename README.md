@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gti-sos/SOS1920-25.svg?branch=master)](https://travis-ci.org/gti-sos/SOS1920-25)
 # SOS1920-25
 Grupo 25 de SOS
 
