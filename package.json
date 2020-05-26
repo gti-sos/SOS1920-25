@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "test" : "npx newman run test/APITests.json --environment test/HEROKU.json && npx newman run test/APITestsAlemencla.json --environment test/HEROKU.json && npx newman run test/APITestsAdrescbar.json --environment test/HEROKU.json",
+    "test" : "npx newman run test/APITests.json --environment test/HEROKU.json && npx newman run test/APITestsAlemencla.json --environment test/HEROKU.json && npx newman run test/APITestsadrescbar.json --environment test/HEROKU.json",
     "dev": "rollup -c -w",
     "start": "node index"
   },
