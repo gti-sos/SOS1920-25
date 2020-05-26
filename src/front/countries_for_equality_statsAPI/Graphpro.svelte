@@ -7,7 +7,7 @@ async function loadGraph() {
 	const resData = await fetch("/api/v2/countries_for_equality_stats");
 	MyData = await resData.json();
 	MyData.forEach( (x) => {
-            MyDataGraph.push({name: x.country + " " + x.year, data: [parseInt(x.global_peace_index), parseFloat(x.global_peace_ranking), parseFloat(x.var)], pointPlacement: 'on'});
+            MyDataGraph.push({name: x.country + " " + x.year, data: [parseInt(x.global_peace_ranking),parseInt(x.global_peace_index),parseInt(x.var)]});
         });
 	
 	Highcharts.chart('container', {
@@ -20,9 +20,9 @@ async function loadGraph() {
 		
 		xAxis: {
 			categories: [
-				'Ranking de Igualdad',
-				'Tasa de Igualdad',
-				'Variación'
+				"Ranking de Paz Global",
+				"Indice de Paz Global",
+				"Variación"	
 			],
 			plotBands: [{ 
 				from: 4.5,
