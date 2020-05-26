@@ -1,0 +1,1093 @@
+{
+	"info": {
+		"_postman_id": "a1d3ce3c-6ece-4602-b3fc-19037376ed1b",
+		"name": "POSTMANAPI_V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOAD INITIAL DATA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/LoadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"LoadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49b62b8b-6b81-4837-911d-d4d16fb3b71c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API PAGINACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a66e361a-382a-43a0-bb00-244d0fec6912",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?limit=2&offset=1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API POR PAIS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d9a107e6-b64b-4ba4-8a3f-1ce357f36ad0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?country=spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API POR AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5039eaf5-480b-4403-9542-1f5232f3f13b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/countries_for_equality_stats?year=2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API POR global_peace_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ce5c191-aa10-448b-821a-743554888945",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?global_peace_index=1801",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "global_peace_index",
+							"value": "1801"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API POR global_peace_ranking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c59bbfb7-0722-4f6c-978c-ece9cd72eb09",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?global_peace_ranking=22",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "global_peace_ranking",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API POR VAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aff39025-f8d0-431f-976a-f76399de1cd1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?var=-1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET API ENTRE AÑOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09490fea-7eb5-4557-9974-785d38ecd2b8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats?fromYear=2018&toYear=2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					],
+					"query": [
+						{
+							"key": "fromYear",
+							"value": "2018"
+						},
+						{
+							"key": "toYear",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST API(VALIDO)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02213dc6-020a-4f40-a3b6-409fecc7852e",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"ESPAÑITA\",\r\n    \"year\": 2019,\r\n    \"global_peace_index\": 1699,\r\n    \"global_peace_ranking\": 32,\r\n    \"var\": 2\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST API(NO VALIDO YA EXISTE)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "06028b13-b470-4cfb-be37-51cdab51b7c9",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"ESPAÑITA\",\r\n    \"year\": 2019,\r\n    \"global_peace_index\": 1699,\r\n    \"global_peace_ranking\": 32,\r\n    \"var\": 2\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST API(NO VALIDO NO SON DATOS COMO PLANTILLA)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8de342b-a682-4a25-a29e-a7ae9d528cd0",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"ESPAÑITA1\",\r\n    \"year\": 2019,\r\n    \"global_peace_index\": 1699,\r\n    \"global_peace_ranking\": 32,\r\n    \"varFALSA\": 2\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COUNTRY API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7a528a7-6561-47d5-8e0d-f57c317e9e30",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COUNTRY API(NO VALIDO,NO EXISTE)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c918d836-f7fa-4b87-b49e-e239a24ce161",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/spain10",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"spain10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ACTUALIZA RECURSO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f72377d1-98b0-43f1-a397-50d5bc910ffe",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"germany\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 15477777777777777,\r\n\"global_peace_ranking\": 22,\r\n\"var\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/germany",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"germany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ACTUALIZA RECURSO(NO VALIDO, NO ENCONTRADO)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8c1b017-f299-4ca3-b9d2-09cdf63e5e8a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"germany\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 15477777777777777,\r\n\"global_peace_ranking\": 22,\r\n\"var\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/germany1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"germany1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ACTUALIZA RECURSO(NO VALIDO, CAMPOS NO VALIDOS)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fa343481-ce85-438b-bac3-9863f8a4f288",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"germany\",\r\n\"year\": 2019,\r\n\"global_peace_indexFALSA\": 15477777777777777,\r\n\"global_peace_ranking\": 22,\r\n\"var\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/germany",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"germany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST NO PERMITIDO(BUENAS PRACTICAS)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "587d9680-d62a-449c-bafc-f32e46e92351",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain1\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 1547,\r\n\"global_peace_ranking\": 22,\r\n\"var\": 5\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT NO VALIDO(BUENAS PRACTICAS)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7cf239d7-f195-47fb-b824-8c909f269bcf",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"germany\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 1547,\r\n\"global_peace_ranking\": 22,\r\n\"var\": 5\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COUNTRY AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1c3f049-1a56-4b82-b14c-2c9624baddbf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COUNTRY AÑO(NO VALIDO, NO ENCONTRADO)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f1fcfe5-f939-434a-9aa7-d852adb0c50a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/20191",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"20191"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT COUNTRY AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "113acc89-b819-4f01-9dd9-9c6d71c1986f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"italy\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 1754,\r\n\"global_peace_ranking\": 39,\r\n\"var\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT COUNTRY AÑO (NO VALIDO ,NO ENCONTRADO)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6dbcc884-436a-43c7-acbd-8b5fd37a40fd",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"italy\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 1754,\r\n\"global_peace_ranking\": 39,\r\n\"var\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/20191",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"20191"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT COUNTRY AÑO (NO VALIDO ,CAMPOS NO VALIDOS)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4f05dc5-322b-4530-8bf2-5b725f3d19a4",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"italy\",\r\n\"year\": 2019,\r\n\"global_peace_index\": 1754,\r\n\"global_peace_rankingFALSA\": 39,\r\n\"var\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COUNTRY AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa50a60b-6564-4f2b-9926-a4df50197e87",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/italy/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"italy",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COUNTRY AÑO(NO VALIDO,NO ENCONTRADO)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats/spain/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats",
+						"spain",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BASE DE DATOS ENTERA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cea7db28-6572-43bf-b2bf-2b17a3225712",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/countries_for_equality_stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"countries_for_equality_stats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,1160 @@
+{
+	"info": {
+		"_postman_id": "867cf74a-228a-4383-a571-81aa47d20939",
+		"name": "sos1920-l07",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c16af3e7-4ec7-477e-8bac-4a9fd6671a25",
+						"exec": [
+							"pm.test(\"Successful DELETE or METHOD NOT ALLOWED\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,405]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c54cbd99-526b-4e52-9572-3d24a4bd1636",
+						"exec": [
+							"pm.test(\"Successful GET or ALREADY EXIST\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,409]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c54cbd99-526b-4e52-9572-3d24a4bd1636",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index paginacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/global_competitiveness_index?limit=2&offset=1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?country=spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?year=2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?index=81.80",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "index",
+							"value": "81.80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search ranking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?ranking=34",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "ranking",
+							"value": "34"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search var",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?var=0.36",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "0.36"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index search between year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88fc4b4-46f5-4cd2-bafc-3948bb8bf169",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index?fromYear=2018&toYear=2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					],
+					"query": [
+						{
+							"key": "fromYear",
+							"value": "2018"
+						},
+						{
+							"key": "toYear",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f12f4c55-ce76-444b-9626-d00b739a6a47",
+						"exec": [
+							"pm.test(\"Successful POST, BAD REQUEST or CONFLICT\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,400,409]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2019,\r\n\t\t\"ranking\" : 32,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post global_competitiveness_index/suiza",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77d1f360-40f9-4924-adfc-aa01b9f8eab5",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2020,\r\n\t\t\"ranking\" : 32,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put global_competitiveness_index/suiza",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd76156f-a2df-4182-b773-8c314b63aa04",
+						"exec": [
+							"pm.test(\"Successful PUT, BAD REQUEST or NOT FOUND\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2020,\r\n\t\t\"ranking\" : 32,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7343e6d4-decd-4341-a960-9967eee12eb1",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2020,\r\n\t\t\"ranking\" : 32,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index/suiza",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "767bf24d-577a-41ce-affb-9f6721ac80a8",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete global_competitiveness_index/suiza",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20c7362a-3ab0-48b8-99a6-a44e992dd525",
+						"exec": [
+							"pm.test(\"Successful DELETE or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f12f4c55-ce76-444b-9626-d00b739a6a47",
+						"exec": [
+							"pm.test(\"Successful POST, BAD REQUEST or CONFLICT\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,400,409]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2019,\r\n\t\t\"ranking\" : 32,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index/suiza/2019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "767bf24d-577a-41ce-affb-9f6721ac80a8",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put global_competitiveness_index/suiza/2019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd76156f-a2df-4182-b773-8c314b63aa04",
+						"exec": [
+							"pm.test(\"Successful PUT, BAD REQUEST or NOT FOUND\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{ \r\n\t\t\"country\" : \"suiza\",\r\n\t\t\"year\" : 2019,\r\n\t\t\"ranking\" : 40,\r\n\t\t\"index\": 70.85,\r\n\t\t\"var\": -0.46\r\n\t}\r\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index/suiza",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "767bf24d-577a-41ce-affb-9f6721ac80a8",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete global_competitiveness_index/suiza/2019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20c7362a-3ab0-48b8-99a6-a44e992dd525",
+						"exec": [
+							"pm.test(\"Successful DELETE or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/suiza/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"suiza",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c16af3e7-4ec7-477e-8bac-4a9fd6671a25",
+						"exec": [
+							"pm.test(\"Successful DELETE or METHOD NOT ALLOWED\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,405]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c54cbd99-526b-4e52-9572-3d24a4bd1636",
+						"exec": [
+							"pm.test(\"Successful GET or ALREADY EXIST\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,409]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global_competitiveness_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c54cbd99-526b-4e52-9572-3d24a4bd1636",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/global_competitiveness_index",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"global_competitiveness_index"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
