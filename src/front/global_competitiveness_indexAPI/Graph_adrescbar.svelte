@@ -7,10 +7,9 @@ async function loadGraph() {
 	const resData = await fetch("/api/v2/global_competitiveness_index");
 	MyData = await resData.json();
 	MyData.forEach( (x) => {
-            MyDataGraph.push({name: x.country + " " + x.year , data: 
+            MyDataGraph.push({name: x.country + " (" + x.year + ") ", data: 
             [parseInt(x.ranking), parseFloat(x.index), parseFloat(x.var)]});
         });
-	
         Highcharts.chart('container', {
     chart: {
         type: 'column'

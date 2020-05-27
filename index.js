@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 //API Juan Manuel
 const happiness_rateAPIv1 = require("./src/back/happiness_rateAPI/v1");
 const happiness_rateAPIv2 = require("./src/back/happiness_rateAPI/v2");
@@ -13,6 +14,7 @@ const countries_for_equality_statsAPIv2 = require("./src/back/countries_for_equa
 var app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 happiness_rateAPIv1(app);   
 happiness_rateAPIv2(app);   
