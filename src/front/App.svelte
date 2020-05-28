@@ -11,6 +11,7 @@
 	import countries_adrescbar from './global_competitiveness_indexAPI/countries_adrescbar.svelte';
 	import editCountry1 from './global_competitiveness_indexAPI/editCountry.svelte';
 	import Graph_adrescbar from './global_competitiveness_indexAPI/Graph_adrescbar.svelte';
+	import Awesome_Graph_adrescbar from './global_competitiveness_indexAPI/Awesome_Graph.svelte';
 	// Alejandro
 	import countries_for_equality_stats from './countries_for_equality_statsAPI/countries_for_equality_stats.svelte';
     import EditCountry2 from './countries_for_equality_statsAPI/EditCountry.svelte';
@@ -29,10 +30,11 @@
 		"/happiness_rate": CountriesTable,
 		"/happiness_rate/:country/:year": EditCountry,
 		"/happiness_rate/graph": Graph,
-		"/happiness_rate/graphA": GraphA,
+		"/happiness_rate/awesomegraph": GraphA,
 		"/global_competitiveness_index": countries_adrescbar,
         "/global_competitiveness_index/:country/:year": editCountry1,
 		"/global_competitiveness_index/graph": Graph_adrescbar,
+		"/global_competitiveness_index/Awesome_Graph": Awesome_Graph_adrescbar,
 		"/countries_for_equality_stats": countries_for_equality_stats,
 		"/countries_for_equality_stats/:country/:year": EditCountry2,
 		"/countries_for_equality_stats/graph": Graphpro,

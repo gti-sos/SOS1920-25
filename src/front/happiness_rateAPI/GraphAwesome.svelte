@@ -32,7 +32,7 @@
             },
             radar: {
                 axis: {
-                    max: 67
+                    max: 70
                 },
                 level: {
                     depth: 3
@@ -44,12 +44,14 @@
             size: {
                 width: 640,
                 height: 480
-            }
+            },
+            bindto: "#radarChart"
         });
     }
     onMount(loadGraph);
 </script>
 
-<main align = "center">
-    <div id="radarChart" align = "center">Grafica sobre la Tasa de Felicidad</div>
+<main >
+    <div align ="center">Gráfica sobre la Tasa de Felicidad</div>
+    <div id="radarChart" align ="center"></div>
 </main>
