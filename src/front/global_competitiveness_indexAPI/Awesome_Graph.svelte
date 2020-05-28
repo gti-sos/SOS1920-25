@@ -2,7 +2,7 @@
 </body>
 <style>
 canvas {
-margin-left: 29%;
+margin-left: 20%;
 }
 </style>
 
