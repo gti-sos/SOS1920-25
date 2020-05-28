@@ -1,7 +1,6 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Integrations from './Integrations.svelte';
-	import Analytics from './Analytics.svelte';
 	//Juan Manuel
 	import CountriesTable from './happiness_rateAPI/CountriesTable.svelte';
 	import EditCountry from './happiness_rateAPI/EditCountry.svelte';
@@ -25,7 +24,7 @@
 	const routes = {
 		"/": Home,
 		"/Integrations": Integrations,
-		"/Analytics": Analytics, 
+	
 
 		"/happiness_rate": CountriesTable,
 		"/happiness_rate/:country/:year": EditCountry,
