@@ -1,10 +1,12 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Integrations from './Integrations.svelte';
+	import Analytics from './Analytics.svelte';
 	//Juan Manuel
 	import CountriesTable from './happiness_rateAPI/CountriesTable.svelte';
 	import EditCountry from './happiness_rateAPI/EditCountry.svelte';
 	import Graph from './happiness_rateAPI/Graph.svelte';
+	import GraphA from './happiness_rateAPI/GraphAwesome.svelte';
 	//Adrian
 	import countries_adrescbar from './global_competitiveness_indexAPI/countries_adrescbar.svelte';
 	import editCountry1 from './global_competitiveness_indexAPI/editCountry.svelte';
@@ -22,10 +24,12 @@
 	const routes = {
 		"/": Home,
 		"/Integrations": Integrations,
+		"/Analytics": Analytics, 
 
 		"/happiness_rate": CountriesTable,
 		"/happiness_rate/:country/:year": EditCountry,
 		"/happiness_rate/graph": Graph,
+		"/happiness_rate/graphA": GraphA,
 		"/global_competitiveness_index": countries_adrescbar,
         "/global_competitiveness_index/:country/:year": editCountry1,
 		"/global_competitiveness_index/graph": Graph_adrescbar,
