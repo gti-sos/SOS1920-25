@@ -14,6 +14,13 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 	<script defer src='/build/bundle.js'></script>
+
+	<script src="https://code.highcharts.com/highcharts.js" on:load={loadGraph}></script>
+    <script src="https://code.highcharts.com/highcharts-more.js" on:load={loadGraph}></script>
+    <script src="https://code.highcharts.com/modules/exporting.js" on:load={loadGraph}></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
+	<script src="https://code.highcharts.com/modules/sunburst.js" on:load={loadGraph}></script>
+
 	<!-- Juan Manuel-->
 	<script src="https://d3js.org/d3.v5.min.js" on:load={loadGraph}></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/billboard.js/1.12.10/billboard.css">
@@ -23,11 +30,15 @@
 	<!--Adrian-->
     <script src='https://www.rgraph.net/libraries/src/RGraph.pie.js' on:load={loadGraph}></script>
     <script src='https://www.rgraph.net/libraries/src/RGraph.common.core.js' on:load={loadGraph}></script>
-    <script src='https://www.rgraph.net/libraries/src/RGraph.common.dynamic.js' on:load={loadGraph}></script>
+	<script src='https://www.rgraph.net/libraries/src/RGraph.common.dynamic.js' on:load={loadGraph}></script>
+	<!--Alejandro-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" on:load={loadGraph} ></script>
+
 </head>
 
 <body>
-	<h1 align=center>SOS1920-25</h1>
+	<img src="logo.png" alt="" width=5% height=8% align=right>
+    <h1 align=center>SOS1920-25</h1>
 	<div id="SvelteApp"></div>
 </body>
 

@@ -3,16 +3,30 @@ module.exports = function (app){
 	const BASE_API_URL = "/api/v2";
 	const dataStore = require("nedb");
 	const path = require("path");
-	
-	const dbFileName = path.join(__dirname,"./countries_for_equality_stat.db");
+	const request = require('request');
+	const express = require("express");
 
+	const dbFileName = path.join(__dirname,"./countries_for_equality_stat.db");
+		// Proxy para API Grupo 22
+		var proxy22 = "/api/v2/formula-stats"
+		var urlProxy22 = "https://sos1920-22.herokuapp.com"
+	
 	const db = new dataStore ({
 		filename: dbFileName,
 		autoload: true
 	});
+
+	// Proxy para API Grupo 22
+	app.use(proxy22, function(req, res){
+	var url = urlProxy22 + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+});	
 	
 	var countries_for_equality_stats = [
 ];
+   
+app.use(express.static('.'));	
 
 var countries_for_equality_stats1 = [
 	{ 

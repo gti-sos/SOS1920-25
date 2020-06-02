@@ -1,14 +1,9 @@
 <body style="background-color:#082EFF;">
 </body>
-<style>
-canvas {
-margin-left: 20%;
-}
-</style>
-
+<div align = "center">
 <canvas  id="cvs" width="800" height="278" style="border: 1px solid #eee">
 </canvas>
-
+</div>
 <script>
     import { onMount } from 'svelte';
     async function loadGraph() {

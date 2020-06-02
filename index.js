@@ -16,6 +16,15 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
+
+
 happiness_rateAPIv1(app);   
 happiness_rateAPIv2(app);   
 global_competitiveness_indexAPIv1(app);    

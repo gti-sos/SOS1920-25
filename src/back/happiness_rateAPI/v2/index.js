@@ -2,14 +2,28 @@ module.exports = function (app){
     console.log("Loaded Module");
 	const BASE_API_URL = "/api/v2";
     const dataStore = require("nedb");
-    const path = require("path");
+	const path = require("path");
+	const request = require('request');
+	const express = require("express");
 
     const dbFileName = path.join(__dirname,"./countries.db");
 
     const db = new dataStore ({
         filename: dbFileName,
         autoload: true
-    });
+	});
+	// Proxy para API Grupo 5
+	var proxy05 = "/api/v1/life_expectancies"
+	var urlProxy05 = "https://sos1920-05.herokuapp.com"
+	// Proxy para API Grupo 9
+	var proxy09 = "/api/v4/renewable-sources-stats"
+	var urlProxy09 = "https://sos1920-09.herokuapp.com"
+	// Proxy para API Grupo 12
+	var proxy12 = "/api/v2/overdose-deaths"
+	var urlProxy12 = "https://sos1920-12.herokuapp.com"
+	// Proxy para API Grupo 22
+	var proxy22 = "/api/v1/og-basket-stats"
+	var urlProxy22 = "https://sos1920-22.herokuapp.com"
    
 
 var initialcountries = [
@@ -43,6 +57,36 @@ var initialcountries = [
 	}
 	
 ];
+				
+// Proxy para API Grupo 5
+app.use(proxy05, function(req, res){
+	var url = urlProxy05 + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+});	
+app.use(express.static('.'));				
+// Proxy para API Grupo 9
+app.use(proxy09, function(req, res){
+	var url = urlProxy09 + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+});	
+app.use(express.static('.'));				
+// Proxy para API Grupo 12
+app.use(proxy12, function(req, res){
+	var url = urlProxy12 + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+});	
+app.use(express.static('.'));
+// Proxy para API Grupo 22
+app.use(proxy22, function(req, res){
+	var url = urlProxy22 + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+});		
+app.use(express.static('.'));			
+
 
 // GET COUNTRIES
 

@@ -2,14 +2,27 @@ module.exports = function (app){
     console.log("Loaded Module");
 	const BASE_API_URL = "/api/v2";
     const dataStore = require("nedb");
-    const path = require("path");
+	const path = require("path");
+	const request = require('request');
+	const express = require("express");
+
+	// Proxy para API Grupo 10
+	var proxy10 = "/api/v2/global-divorces"
+	var urlProxy10 = "https://sos1920-10.herokuapp.com"
 
     const dbFileName = path.join(__dirname,"./global_competitiveness_index.db");
 
     const db = new dataStore ({
         filename: dbFileName,
         autoload: true
-    });
+	});
+
+	// Proxy Grupo 10
+	app.use(proxy10, function(req, res){
+		var url = urlProxy10 + req.baseUrl + req.url;
+		console.log("piped: " + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res)
+	});	
 
 var countries_adrescbar = [
     { 
