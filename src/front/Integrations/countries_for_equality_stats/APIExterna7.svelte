@@ -1,28 +1,28 @@
 <script>
-    import {pop} from "svelte-spa-router";
+      import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
     async function loadGraph() {
-        const resDataBaseExterna = await fetch("https://stopwords.p.rapidapi.com/categories", {
+        const resDataBaseExterna = await fetch("https://metropolis-api-phone.p.rapidapi.com/directory?country=BR", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "stopwords.p.rapidapi.com",
+		"x-rapidapi-host": "metropolis-api-phone.p.rapidapi.com",
 		"x-rapidapi-key": "5acefcc3b4msh4884fd7c1958392p10a3abjsn4fe5ecdb7afa"
 	}
 });
         const resDataEquality = await fetch("api/v2/countries_for_equality_stats");
 
         let BaseExterna = await resDataBaseExterna.json();
-
+        let BaseExterna1 = BaseExterna.items; 
         let equality = await resDataEquality.json();
         
         console.log(equality);
         console.log(BaseExterna);
 
-        let dataBaseExterna = BaseExterna.map((d) => {
+        let dataBaseExterna = BaseExterna1.map((d) => {
             let res = {
-                name: d.category_name,
-                value: parseInt(d["words"])
+                name: d.arecode,
+                value: parseInt(d["country-calling-code"])
             };
             return res;
         });
@@ -36,7 +36,7 @@
         let dataTotal =
             [
                 {
-                    name: "Nº palabras dentro de la categorias",
+                    name: "Señal de movil",
                     data: dataBaseExterna
                 },
                 {
@@ -50,7 +50,7 @@
                 height: '60%'
             },
             title: {
-                text: 'Relación entre el ranking de paz y el Nº palabras dentro de la categorias'
+                text: 'Relación entre el ranking de paz y Señal de movil'
             },
             tooltip: {
                 useHTML: true,
@@ -95,7 +95,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Gráfica de diferencia entre el ranking de paz y el rango de nº palabras dentro de la categorias
+            Gráfica de diferencia entre el ranking de paz y Señal de movil
         </p>
     </figure>
     <div style="text-align:center;padding-bottom: 3%;">

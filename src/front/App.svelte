@@ -15,7 +15,7 @@
 	import Externa02 from './Integrations/happiness_rate/Externa02.svelte';
 	import Externa03 from './Integrations/happiness_rate/Externa03.svelte';
 	import Externa04 from './Integrations/happiness_rate/Externa04.svelte';
-	import Externa05 from './Integrations/happiness_rate/Externa05.svelte';
+
 	//Adrian
 	import countries_adrescbar from './global_competitiveness_indexAPI/countries_adrescbar.svelte';
 	import editCountry1 from './global_competitiveness_indexAPI/editCountry.svelte';
@@ -46,7 +46,7 @@
 	import E05 from './Integrations/countries_for_equality_stats/APIExterna5.svelte';
 	import E06 from './Integrations/countries_for_equality_stats/APIExterna6.svelte';
 	import E07 from './Integrations/countries_for_equality_stats/APIExterna7.svelte';
-	import E08 from './Integrations/countries_for_equality_stats/APIExterna8.svelte';
+
 
 	import NotFound from './NotFound.svelte';
 
@@ -72,7 +72,7 @@
 		"/integrations/Externa02": Externa02,
 		"/integrations/Externa03": Externa03,
 		"/integrations/Externa04": Externa04,
-		"/integrations/Externa05": Externa05,
+	
 
 		"/global_competitiveness_index": countries_adrescbar,
         "/global_competitiveness_index/:country/:year": editCountry1,
@@ -103,7 +103,7 @@
 		"/integrations/E05": E05,
 		"/integrations/E06": E06,
 		"/integrations/E07": E07,
-		"/integrations/E08": E08,
+	
 	
 
 		"*": NotFound

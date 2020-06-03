@@ -2,15 +2,15 @@
     import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     let Data = [];
-    let Over = [];
+    let Coins = [];
     async function loadGraph() {
-        const resOver = await fetch("https://overtracker1.p.rapidapi.com/feed/global?page=1", {
-	    "method": "GET",
-	    "headers": {
-		    "x-rapidapi-host": "overtracker1.p.rapidapi.com",
-		    "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
-	        }
-        });
+        const resCoins = await fetch("https://coinpaprika1.p.rapidapi.com/exchanges", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinpaprika1.p.rapidapi.com",
+		"x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
+	}
+});
 
         const resDataHappiness_rate = await fetch("/api/v2/happiness_rate");
         let Happy = await resDataHappiness_rate.json();
@@ -22,15 +22,15 @@
             };
             return res;
         });
-        Over = await resOver.json();
-        console.log(Over);
-        Over.forEach((x) => {
-            let over = {
-                'name': x.player.tag,
-		        'value': x.date
+        Coins = await resCoins.json();
+        console.log(Coins);
+        Coins.forEach((x) => {
+            let coin = {
+                'name': x.name,
+		        'value': x.markets
             };
            
-            Data.push(over);
+            Data.push(coin);
 
         }); 
        
@@ -41,7 +41,7 @@
                     data: dataHappiness
                 },
                 {
-                    name: "Tag de Jugadores",
+                    name: "Nombre de la Criptomoneda",
                     data: Data
                 }
             ];
@@ -51,7 +51,7 @@
                 height: '40%'
             },
             title: {
-                text: 'Relación entre el tiempo jugado y el Ranking de Felicidad'
+                text: 'Relación entre el número de mercados en la que se usa la criptomoneda y el Ranking de Felicidad'
             },
             tooltip: {
                 useHTML: true,
@@ -96,7 +96,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description" align = "center">
-            Gráfica que muestra el ranking de felicidad y el tiempo jugado.
+            Gráfica que muestra el ranking de felicidad y el número de mercados en la que se usa la criptomoneda.
         </p>
     </figure>
     <div style="text-align:center;padding-bottom: 3%;">

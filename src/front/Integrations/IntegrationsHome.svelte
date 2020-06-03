@@ -16,7 +16,7 @@
     <br>
     <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/Externa03'" style= "margin-left:12.5%; width: 25%;">API Externa 03 </button>
     <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/Externa04'" style=  "width: 25%;">API Externa 04 </button>
-    <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/Externa05'" style=  "width: 25%;">API Externa 05 </button><br>
+    <br>
     <h3 style="text-align: center;"> Adrian</h3>
     <br>
     <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/api-22'" style="margin-left: 12.5%; width: 25%;"> API Grupo 22</button>
@@ -47,7 +47,7 @@
     <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/E06'" style=  " width: 25%;">API Externa 06 </button><br>
     <br>
     <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/E07'" style= "margin-left:12.5%; width: 25%;">API Externa 07</button>
-    <button type="button" class="btn btn-secondary" onclick="window.location.href='#/integrations/E08'" style=  " width: 25%;">API Externa 08 </button><br>
+    <br>
     <br>
     <div style="text-align:center;padding-bottom: 3%;">
     <Button outline color="secondary" on:click="{pop}">Volver</Button>

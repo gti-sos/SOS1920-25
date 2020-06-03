@@ -2,13 +2,13 @@
     import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     let Data = [];
-    let Pokemon = [];
+    let Over = [];
     async function loadGraph() {
-        const resPokemon = await fetch("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json", {
-            "method": "GET",
-	        "headers": {
-		        "x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
-		        "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
+        const resOver = await fetch("https://overtracker1.p.rapidapi.com/feed/global?page=1", {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "overtracker1.p.rapidapi.com",
+		    "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
 	        }
         });
 
@@ -22,15 +22,15 @@
             };
             return res;
         });
-        Pokemon = await resPokemon.json();
-        console.log(Pokemon);
-        Pokemon.forEach((x) => {
-            let pokemon = {
-                'name': x.pokemon_name + " " + x.form,
-		        'value': x.base_attack
+        Over = await resOver.json();
+        console.log(Over);
+        Over.forEach((x) => {
+            let over = {
+                'name': x.player.tag,
+		        'value': x.date
             };
            
-            Data.push(pokemon);
+            Data.push(over);
 
         }); 
        
@@ -41,7 +41,7 @@
                     data: dataHappiness
                 },
                 {
-                    name: "Ataque por Pokemon segun su naturaleza",
+                    name: "Tag de Jugadores",
                     data: Data
                 }
             ];
@@ -51,7 +51,7 @@
                 height: '40%'
             },
             title: {
-                text: 'Relación entre el ataque por Pokemon segun su naturaleza y el Ranking de Felicidad'
+                text: 'Relación entre el tiempo jugado y el Ranking de Felicidad'
             },
             tooltip: {
                 useHTML: true,
@@ -96,7 +96,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description" align = "center">
-            Gráfica que muestra el ranking de felicidad y el ataque por Pokemon segun su naturaleza.
+            Gráfica que muestra el ranking de felicidad y el tiempo jugado.
         </p>
     </figure>
     <div style="text-align:center;padding-bottom: 3%;">
