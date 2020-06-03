@@ -6,7 +6,7 @@
     import Button from "sveltestrap/src/Button.svelte";
     async function loadGraph() {
         const resMyData = await fetch("/api/v2/global_competitiveness_index");
-        const resDataSwim = await fetch("http://sos1920-22.herokuapp.com/api/v1/swim-stats");
+        const resDataSwim = await fetch("https://sos1920-22.herokuapp.com/api/v1/swim-stats");
         let MyData = await resMyData.json();
         let SwimData = await resDataSwim.json();
 
