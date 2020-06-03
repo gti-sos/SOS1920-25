@@ -6,7 +6,7 @@
     let Country2 = [];
     async function loadGraph() {
         const resCOVID = await fetch("https://covid-193.p.rapidapi.com/statistics", {
-	    "method": "GET",
+	     "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "covid-193.p.rapidapi.com",
 		    "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"

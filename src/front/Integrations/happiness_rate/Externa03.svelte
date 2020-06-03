@@ -5,11 +5,11 @@
     let Pokemon = [];
     async function loadGraph() {
         const resPokemon = await fetch("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json", {
-    "method": "GET",
-	"headers": {
-		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
-		"x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
-	}
+            "method": "GET",
+	        "headers": {
+		        "x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
+		        "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
+	        }
         });
 
         const resDataHappiness_rate = await fetch("/api/v2/happiness_rate");
