@@ -2,7 +2,7 @@
 </body>
 
 <script>
-      import {pop} from "svelte-spa-router";
+    import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     async function loadGraph() {
         const resMyData = await fetch("/api/v2/global_competitiveness_index");

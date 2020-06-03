@@ -2,14 +2,14 @@
     import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     let Data = [];
-    let Pokemon = [];
+    let Over = [];
     async function loadGraph() {
-        const resPokemon = await fetch("https://overtracker1.p.rapidapi.com/feed/global?page=1", {
+        const resOver = await fetch("https://overtracker1.p.rapidapi.com/feed/global?page=1", {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "overtracker1.p.rapidapi.com",
 		    "x-rapidapi-key": "7ba6091b4amsh6731b2f89b0cdc6p106e3fjsnbd534659f6b0"
-	    }
+	        }
         });
 
         const resDataHappiness_rate = await fetch("/api/v2/happiness_rate");
@@ -22,15 +22,15 @@
             };
             return res;
         });
-        Pokemon = await resPokemon.json();
-        console.log(Pokemon);
-        Pokemon.forEach((x) => {
-            let pokemon = {
+        Over = await resOver.json();
+        console.log(Over);
+        Over.forEach((x) => {
+            let over = {
                 'name': x.player.tag,
 		        'value': x.date
             };
            
-            Data.push(pokemon);
+            Data.push(over);
 
         }); 
        
