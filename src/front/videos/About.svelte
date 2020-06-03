@@ -7,8 +7,8 @@
 <body>
     <h3 align ="center" >Videos</h3>
     <div class="columna">
-        <h5 align = "center"> Video Juan Manuel</h5>
-        <iframe title= "Video Juan Manuel" width="400" height="200" src="https://www.youtube.com/embed/asMyReN6gBc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h5 align = "center">Video Juan Manuel</h5>
+        <iframe title= "Video Juan Manuel" width="400" height="200" src="https://www.youtube.com/embed/asMyReN6gBc" frameborder="0" allow="accelerometer;autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="columna">
             <h5 align = "center"> Video Adrian</h5>
