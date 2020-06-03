@@ -71,8 +71,23 @@
 	<br>
 	</div>
 
-	<h4 align=center>Nuestras Integraciones</h4>
-	<div align="center"><a href = "https://sos1920-25.herokuapp.com/#/integrations">https://sos1920-25.herokuapp.com/#/integrations</a></div>
-
+	
+	<div class="columna">
+	<h4 >Gráfica conjunta</h4>
+	<li><a href = "https://sos1920-25.herokuapp.com/#/Analytics">https://sos1920-25.herokuapp.com/#/Analytics</a></li>
+	<br>	
+	</div>
+	
+	<div class="columna">
+	<h4 >Nuestras Integraciones</h4>
+	<li><a href = "https://sos1920-25.herokuapp.com/#/integrations">https://sos1920-25.herokuapp.com/#/integrations</a></li>
+	<br>	
+	</div>
+	
+	<div class="columna">
+	<h4 >Videos</h4>
+	<li><a href = "https://sos1920-25.herokuapp.com/#/about">https://sos1920-25.herokuapp.com/#/about</a></li>
+	<br>
+	</div>
 	
 </body>
