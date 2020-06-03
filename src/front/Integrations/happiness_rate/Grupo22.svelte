@@ -6,7 +6,7 @@
         const resDataHappiness_rate = await fetch("/api/v2/happiness_rate");
         let Basket = await resBasket.json();
         let Happy = await resDataHappiness_rate.json();
-        
+
         console.log(Basket);
         let dataHappiness = Happy.map((x) => {
             let res = {
@@ -76,7 +76,6 @@
     }
     loadGraph();
 </script>
-
 
 
 <main>
